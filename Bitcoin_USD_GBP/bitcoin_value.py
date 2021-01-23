@@ -41,7 +41,7 @@ usd_to_gbp = float(gbp.string)
 
 #------ bitcoin-usd convert to bitcoin_gbp
 def convert_to_gbp():
-    return bitcoin_to_usd * usd_to_gbp
+    return round(bitcoin_to_usd * usd_to_gbp, 2)
 
 #------ user input/output
 while True:
@@ -61,13 +61,16 @@ while True:
 
         1 bitcoin = ${bitcoin_to_usd}
 
+
         """)
+
 
     elif options == "2":
         print(f"""
         Current Date & Time: {current_time},
 
         1 bitcoin = £{convert_to_gbp()}
+
 
         """)
 
