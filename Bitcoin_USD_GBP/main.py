@@ -4,11 +4,7 @@
 
 import requests
 from bs4 import BeautifulSoup as bs
-import datetime
-from function import convert_to_gbp
-
-# current date and time
-current_time = datetime.datetime.now()
+from function import convert_to_gbp, time
 
 # urls of website we are scraping
 bitcoin_url = requests.get("https://www.coindesk.com/price/bitcoin") # website return bitcoin worth to USD
@@ -55,7 +51,7 @@ while True:
 
     if options == "1":
         print(f"""
-        Current Date & Time: {current_time},
+        Current Date & Time: {time()},
 
         > 1 bitcoin = ${bitcoin_to_usd}
 
@@ -65,7 +61,7 @@ while True:
 
     elif options == "2":
         print(f"""
-        Current Date & Time: {current_time},
+        Current Date & Time: {time()},
 
         > 1 bitcoin = £{convert_to_gbp(bitcoin_to_usd, usd_to_gbp)}
 
@@ -74,7 +70,7 @@ while True:
 
     elif options == "3":
         print(f"""
-        Current Date & Time: {current_time},
+        Current Date & Time: {time()},
 
         According to TranferWise.com
         Mid-market exchange rate:
@@ -86,7 +82,9 @@ while True:
 
     elif options == "Q":
         print()
-        print("See you soon...")
+        print("""
+        See you soon...
+        """)
         break
 
     else:
